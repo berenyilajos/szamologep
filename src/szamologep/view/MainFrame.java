@@ -5,7 +5,7 @@
  */
 package szamologep.view;
 
-import szamologep.Controller.Calculator;
+import szamologep.controller.Calculator;
 import szamologep.enums.Operation;
 
 import java.awt.BorderLayout;

@@ -5,7 +5,7 @@
  */
 package app;
 
-import szamologep.Controller.Calculator;
+import szamologep.controller.Calculator;
 import szamologep.enums.Operation;
 import szamologep.model.TemporaryResult;
 import szamologep.view.MainFrame;

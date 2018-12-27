@@ -1,4 +1,4 @@
-package szamologep.Controller;
+package szamologep.controller;
 
 import szamologep.enums.Operation;
 import szamologep.model.TemporaryResult;
