@@ -258,17 +258,19 @@ public class MainFrame extends JFrame implements ActionListener, KeyListener {
     
     private void addNumber(String btnText){
         if (display.getText().length() > 20) return;
-        if (display.getText().equals("0"))
+        if (display.getText().equals("0")) {
             display.setText(btnText);
-        else
+        } else {
 //            display.setText(display.getText() + btnText);
             display.append(btnText); // csak override után működik!
+        }
     }
     
     private void addDot(){
-        if (!display.getText().isEmpty() && !display.getText().contains("."))
+        if (!display.getText().isEmpty() && !display.getText().contains(".")) {
 //            display.setText(display.getText() + ".");
             display.append("."); // csak override után működik!
+        }
     }
     
     private void back(){
@@ -279,8 +281,9 @@ public class MainFrame extends JFrame implements ActionListener, KeyListener {
                     display.setText("0");
                     return;
                 }
-                if (!txt.isEmpty())
+                if (!txt.isEmpty()) {
                     Double.parseDouble(txt);
+                }
                 display.setText(txt);
             } catch (Exception e) {
                 //ha a txt nem parselhető double-ra, akkor nem csinálunk semmit.
@@ -309,10 +312,11 @@ public class MainFrame extends JFrame implements ActionListener, KeyListener {
     }
     
     public String format(double d){
-        if(d == (long) d)
+        if(d == (long) d) {
             return String.format("%d",(long)d);
-        else
+        } else {
             return String.format("%s",d);
+        }
     }
     
     private void getResult(Operation func){
@@ -338,9 +342,11 @@ public class MainFrame extends JFrame implements ActionListener, KeyListener {
     
     private void getPosNeg() {
         if (display.getText().isEmpty() || display.getText().equals("0")) return;
-        if (display.getText().substring(0, 1).equals("-"))
+        if (display.getText().substring(0, 1).equals("-")) {
             display.setText(display.getText().substring(1));
-        else display.setText("-" + display.getText());
+        } else {
+            display.setText("-" + display.getText());
+        }
     }
     
     private final void setDesign() {
@@ -363,16 +369,19 @@ class modifJTextArea extends JTextArea {
     @Override
     public String getText(){
         String txt = super.getText();
-        if (txt.isEmpty())
+        if (txt.isEmpty()) {
             return txt;
-        if (txt.substring(txt.length() - 1).equals("-") && txt.substring(0, 1).equals(".")){
+        }
+        if (txt.substring(0, 1).equals(".") && txt.substring(txt.length() - 1).equals("-")){
             txt = "-" + txt.substring(1, txt.length() - 1) + ".";
             return txt;
         }
-        if (txt.substring(txt.length() - 1).equals("-"))
+        if (txt.substring(txt.length() - 1).equals("-")) {
             txt = "-" + txt.substring(0, txt.length() - 1);
-        if (txt.substring(0, 1).equals("."))
+        }
+        if (txt.substring(0, 1).equals(".")) {
             txt = txt.substring(1) + ".";
+        }
         return txt;
     }
     
@@ -387,10 +396,12 @@ class modifJTextArea extends JTextArea {
             super.setText(txt);
             return;
         }
-        if (txt.substring(0, 1).equals("-"))
+        if (txt.substring(0, 1).equals("-")) {
             txt = txt.substring(1) + "-";
-        if (txt.substring(txt.length() - 1).equals("."))
+        }
+        if (txt.substring(txt.length() - 1).equals(".")) {
             txt = "." + txt.substring(0, txt.length() - 1);
+        }
         super.setText(txt);
     }
     
