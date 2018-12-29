@@ -349,13 +349,13 @@ public class MainFrame extends JFrame implements ActionListener, KeyListener {
         }
     }
     
-    private final void setDesign() {
+    private void setDesign() {
         try {
             UIManager.setLookAndFeel(
                     "com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
 //            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch(ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {  
-
+        } catch(ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
+            System.out.println(e.getMessage());
         }
     }
 }
